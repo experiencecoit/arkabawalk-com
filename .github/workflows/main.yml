@@ -20,4 +20,3 @@ jobs:
             delete-removed: ${{ secrets.S3_FOLDER }}/*
             no-cache: false
             private: false
-
