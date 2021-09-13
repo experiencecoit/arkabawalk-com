@@ -13,10 +13,10 @@ jobs:
           uses: reggionick/s3-deploy@v3
           with:
             folder: "."
-            bucket: ${{ secrets.S3_BUCKET }}
+            bucket: ${{ secrets.S3_BUCKET }}/${{ secrets.S3_FOLDER }}
             bucket-region: ${{ secrets.S3_BUCKET_REGION }}
             dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
             invalidation: /
-            delete-removed: true
+            delete-removed: ${{ secrets.S3_FOLDER }}/*
             no-cache: false
             private: false
